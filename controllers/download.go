@@ -48,7 +48,7 @@ func DownloadFileHandler(w http.ResponseWriter, r *http.Request) {
 
 	var fullData bytes.Buffer
 	for _, chunk := range chunks {
-		objectName := fmt.Sprintf("%s_%d", file.ID, chunk.Index)
+		objectName := fmt.Sprintf("%s/%d", file.ID, chunk.Index)
 
 		obj, err := minioClient.GetObject(r.Context(), bucket, objectName, minio.GetObjectOptions{})
 		if err != nil {

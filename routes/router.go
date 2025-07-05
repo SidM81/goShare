@@ -13,6 +13,7 @@ func SetupRouter() *http.ServeMux {
 	r.HandleFunc("/upload/", controllers.UploadFileHandler)
 
 	// File download route
+	r.HandleFunc("/download", controllers.DownloadFileHandler)
 	r.HandleFunc("/download/", controllers.DownloadFileHandler)
 
 	// File share route
