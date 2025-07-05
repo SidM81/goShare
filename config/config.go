@@ -37,7 +37,7 @@ func InitDatabase() {
 	}
 
 	DB = db
-	db.AutoMigrate(&models.File{}, &models.Chunk{})
+	db.AutoMigrate(&models.File{}, &models.Chunk{}, &models.ShareRequest{}, &models.ShareResponse{})
 }
 
 func GetDB() *gorm.DB {
