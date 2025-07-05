@@ -13,7 +13,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func DownloadHandler(w http.ResponseWriter, r *http.Request) {
+func DownloadFileHandler(w http.ResponseWriter, r *http.Request) {
 	// This function will handle file downloads
 	// It will retrieve the file from MinIO and send it to the client
 	fileName := r.URL.Query().Get("name")

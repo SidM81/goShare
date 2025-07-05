@@ -9,7 +9,7 @@ import (
 	"github.com/SidM81/goShare/models"
 )
 
-func ShareHandler(w http.ResponseWriter, r *http.Request) {
+func ShareFileHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		http.Error(w, "Only POST allowed", http.StatusMethodNotAllowed)
 		return

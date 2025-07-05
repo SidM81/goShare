@@ -1,24 +1,22 @@
 package routes
 
-import "net/http"
+import (
+	"net/http"
+
+	"github.com/SidM81/goShare/controllers"
+)
 
 func SetupRouter() *http.ServeMux {
 	r := http.NewServeMux()
 
 	// File upload route
-	r.HandleFunc("/upload/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("File upload functionality is not implemented yet."))
-	})
+	r.HandleFunc("/upload/", controllers.UploadFileHandler)
 
 	// File download route
-	r.HandleFunc("/download/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("File download functionality is not implemented yet."))
-	})
+	r.HandleFunc("/download/", controllers.DownloadFileHandler)
 
 	// File share route
-	r.HandleFunc("/share/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("File share functionality is not implemented yet."))
-	})
+	r.HandleFunc("/share/", controllers.ShareFileHandler)
 
 	return r
 }
